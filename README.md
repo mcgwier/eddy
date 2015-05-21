@@ -1,2 +1,2 @@
 # eddy
-A pleasant Ghost theme
+A pleasant [Ghost](ghost.org) theme inspired by the default theme Casper.
