@@ -8,11 +8,39 @@
     {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
+    <meta name="designer" content="Jason Mcgwier" />
+    <meta name="rating" content="general" />
+    <meta name="keywords" content="ghost, blog, {{meta_title}}" />
+    <meta name="robots" content="index, follow" />
 
+
+    {{! Mobile and Viewport }}
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+    {{! OpenGraph for Facebook }}
+    <meta property="og:title" content="{{meta_title}}" />
+    <meta property="og:locale" content="en_US" />
+
+    {{! Twitter Card }}
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="{{meta_title}}" />
+
+    {{! Icons }}
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    <link rel="icon" sizes="196x196" href="{{asset 'images/android-homescreen.png'}}" />
+    <link rel="apple-touch-icon" href="{{asset 'images/apple-touch-icon.png'}}" />
+
+    {{! Prerendering and Prefetching }}
+    {{#if @blog.cover}}
+        <link rel="prerender" href="{{@blog.cover}}" />
+        <link rel="prefetch" href="{{@blog.cover}}" />
+    {{/if}}
+    <link rel="dns-prefetch" href="//fonts.googleapis.com/" />
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
@@ -32,7 +60,7 @@
 
         <footer class="site-footer clearfix">
             <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <!-- <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section> -->
+            <section class="poweredby"><span>Powered by <a href="https://ghost.org">Ghost</a> | Theme <a href="https://github.com/mcgwier/eddy" class="theme">Eddy</a></span></section>
         </footer>
 
     </div>
@@ -40,7 +68,7 @@
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
-    {{! The main JavaScript file for Casper }}
+    {{! Deferred scripts }}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
