@@ -1,4 +1,20 @@
 {
   "name": "eddy",
-  "version": "1.0"
+  "version": "1.0.0",
+  "description": "A pleasant Ghost theme inspired by the default theme Casper.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcgwier/eddy.git"
+  },
+  "author": "Jason Mcgwier <jason@mcgwier.com>",
+  "bugs": {
+    "url": "https://github.com/mcgwier/eddy/issues"
+  },
+  "homepage": "https://github.com/mcgwier/eddy",
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "private": true,
+  "license": "MIT"
 }
